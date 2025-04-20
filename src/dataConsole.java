@@ -3,7 +3,8 @@ import java.util.*;
 
 public class dataConsole {
     public static void main(String[] args) {
-        dataReader reader = new dataReader();
+        String data = "Ratio-Index.txt";
+        dataReader reader = new dataReader(data);
         ArrayList<String> lines = reader.getLines();
         // file read debug line
         //System.out.println("Working Directory = " + System.getProperty("user.dir"));

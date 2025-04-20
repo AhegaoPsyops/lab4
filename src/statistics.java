@@ -48,4 +48,5 @@ class statistics extends JPanel {
             return 0.0;
         }
     }
+
 }

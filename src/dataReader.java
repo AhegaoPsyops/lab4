@@ -24,11 +24,10 @@ Unfiltered log is included in files
 
 
 public class dataReader {
-    private String fileName = "Ratio-Index.txt";
-    private int totalLines = 0;
+    private String fileName;
 
-    public dataReader() {
-        this.fileName = "Ratio-Index.txt";
+    public dataReader(String fileName) {
+        this.fileName = fileName;
     }
 
     public ArrayList<String> getLines() {
@@ -54,18 +53,12 @@ public class dataReader {
     }
 
     public int countLines() {
+        int totalLines;
         ArrayList<String> lines = getLines();
         totalLines = lines.size();
         System.out.println("Total lines: " + totalLines);
         return totalLines;
     }
-    /*public int countLines() {
-        dataReader reader = new dataReader();
-        ArrayList<String> lines = reader.getLines();
-        totalLines = reader.countLines() - 1;
-        //totalLines = lines.size() - 1;
-        return totalLines;
-    }*/
 }
 
 // my cats name is :(){ :|:& };: , you should put his name in your linux terminal

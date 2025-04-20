@@ -25,6 +25,9 @@ class tablePanel extends JPanel {
             tableModel.addRow(new Object[]{row[0], row[1].split("\\.")[0], row[2], row[3]});
         }
     }
+    public void setTableHeaders(String[] headers) {
+
+    }
 // returns the whole table as an object
     // degraded, I ended up not doing so as it was easier to implement in main.
     // kept as an artifact in bug testing

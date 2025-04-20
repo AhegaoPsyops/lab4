@@ -12,7 +12,7 @@ import java.util.Map;
 
 class chartPanel extends JPanel {
     private List<String[]> data;
-
+    private String chartLabel = "Events per Year";
     public chartPanel(List<String[]> data) {
         this.data = data;
         setPreferredSize(new Dimension(400, 300));
@@ -41,7 +41,7 @@ class chartPanel extends JPanel {
         g.setColor(Color.BLACK);
         g.drawLine(margin, height - margin, width - margin, height - margin);
         g.drawLine(margin, height - margin, margin, margin);
-        g.drawString("Events per Year", width / 2 - 40, height - 10);
+        g.drawString(chartLabel, width / 2 - 40, height - 10);
 
         int maxEvents = Collections.max(eventCountByYear.values());
         int index = 0;
@@ -53,5 +53,8 @@ class chartPanel extends JPanel {
             g.drawString(entry.getKey(), margin + index * barWidth, height - margin + 15);
             index++;
         }
+    }
+    public void setChartLabel(String input){
+        chartLabel = input;
     }
 }
