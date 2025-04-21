@@ -21,11 +21,12 @@ class chartPanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        drawChart(g);
+        drawBarGraph(g);
     }
 
     // I was 6 drinks deep here, I apologize
-    private void drawChart(Graphics g) {
+    private void drawBarGraph(Graphics g) {
+        // because i wasnt able to implement J Graphics, this was handmade, and cant really be turned into another class
         if (data.isEmpty()) return;
         Map<String, Integer> eventCountByYear = new HashMap<>(); // does this count as Streams?
         for (String[] row : data) {

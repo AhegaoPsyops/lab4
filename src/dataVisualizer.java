@@ -18,6 +18,7 @@ This is just grep in Linux lol
 
 public class dataVisualizer extends JFrame {
     // dataVisualizer now takes the file as an input, and turns it into the data that is displayed
+    // pushes the parsed data to the aggregated visual object and creates them all at once.
     Scanner sc = new Scanner(System.in);
     public dataVisualizer(String filename) {
         dataReader reader = new dataReader(filename);
@@ -44,13 +45,20 @@ public class dataVisualizer extends JFrame {
             }
 
         }
-
+        // create builder jpanel class from following object creation data
+        // since the individual jFrame data visualizer creates Jpanels with our
+        // data as an input value, we can create a holder object where it takes the single argument
+        // and translates to multiple panels.
 
         setTitle("Data Visualizer");
         setSize(1000, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
+        visualObjects visual = new visualObjects(fileData);
+        add(visual, BorderLayout.CENTER);
+
+        /*
         tablePanel tablePanel = new tablePanel(fileData);
         statistics statsPanel = new statistics(fileData);
         chartPanel chartPanel = new chartPanel(fileData);
@@ -61,6 +69,8 @@ public class dataVisualizer extends JFrame {
         add(chartPanel, BorderLayout.EAST);
         add(detailsPanel, BorderLayout.SOUTH);
 
+
+         */
     }
 // Invokes dataReader, which parses the data, and then throws it into the GUI
     /*public static void main(String[] args) {
